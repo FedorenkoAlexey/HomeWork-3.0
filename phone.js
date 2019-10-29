@@ -1,5 +1,5 @@
-var string = "hello world";
-var obj = {
+const string = "hello world";
+const obj = {
   0: [" "],
   2: ["a", "b", "c"],
   3: ["d", "e", "f"],
@@ -11,12 +11,12 @@ var obj = {
   9: ["w", "x", "y", "z"]
 };
 
-for (let i = 0; i < string.length; i++) {
-  for (let key in obj) {
-    let index = obj[key].indexOf(string[i]);
-    // console.log(string[i], index);
+const arrLetters = string.split('');
+arrLetters.forEach(function(item, i, arrow) {
+	for (const key in obj) {
+    const index = obj[key].indexOf(arrow[i]);
     if (index >= 0) {
-      console.log(string[i], "Press button:", key, "-", index + 1, "times");
+      console.log(arrow[i], "Press button:", key, "-", index + 1, "times");
     }
   }
-}
+})
